@@ -25,7 +25,7 @@ def get_weather(request: Request, city: str = Form(...)):
     params = {'q':city, "appid":API_KEY, "units":"metric"}
     response = requests.get(BASE_URL, params=params)
     data = response.json()
-    return templates.TemplateResponse('weather.html', {
+    return templates.TemplateResponse('index.html', {
         "request":request,
         "city":city,
         "data": data
